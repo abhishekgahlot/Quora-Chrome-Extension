@@ -5,7 +5,6 @@ Quora-Chrome-Extension Quora Chrome Extension - Instant Search, Message and Noti
 Please note this is under development and bugs may be there. Post and speech to text functionality is not yet available.
 Open issues if required.
 
-Thanks
 
 Some screenshots :
 
