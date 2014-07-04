@@ -9,11 +9,13 @@ $(window).load(function () {
     window.addEventListener('online', function (e) {
         $('#loading-wrap,#loader-text').hide();
         $('#loader-text').text('');
+        setTimeout(_run_api, 1500);
     }, false);
 
     window.addEventListener('offline', function (e) {
         $('#loading-wrap,#loader-text').show();
-        $('#loader-text').text('Trying to connect to internet connection.');
+        $('#loader-text').text('Trying to connect to internet.');
+        $('.notification').html('');
     }, false);
 
     //Global chrome tabs create function
@@ -45,7 +47,12 @@ $(window).load(function () {
         } else {
             $('#login_modal').modal('hide');
         }
-        $('#loading-wrap').hide();
+
+		if(!navigator.onLine){
+			$('#loading-wrap,#loader-text').show();
+			$('#loader-text').text('Trying to connect to internet.');
+		}
+
     });
 
 
@@ -97,53 +104,55 @@ $(window).load(function () {
 
 
     //Api-
-    $.ajax({
-        url: 'http://www.quora.com/api/logged_in_user?fields=inbox,followers,following,notifs',
-        dataType: "text",
-        success: function (data) {
-            if (data == 'while(1);') {
-                $('#login_modal').modal({
-                    show: true,
-                    keyboard: false,
-                    backdrop: 'static'
-                });
-                $('#login').click(function () {
-                    _open_link(this.href);
-                });
-                $('#loading-wrap').hide();
-            } else {
-                data = JSON.parse(data.slice(9));
-                $('.name_notif_msg #name').text(data['name'].split(' ')[0]);
-                $('.name_notif_msg #msg_count').text(data['inbox']['unread_count']);
-                $('.name_notif_msg #notif_count').text(data['notifs']['unseen_count']);
-                $('.name_notif_msg #msg_count').text(data['inbox']['unread_count']);
+	(_run_api=function (){
+	    $.ajax({
+	        url: 'http://www.quora.com/api/logged_in_user?fields=inbox,followers,following,notifs',
+	        dataType: "text",
+	        success: function (data) {
+	            if (data == 'while(1);') {
+	                $('#login_modal').modal({
+	                    show: true,
+	                    keyboard: false,
+	                    backdrop: 'static'
+	                });
+	                $('#login').click(function () {
+	                    _open_link(this.href);
+	                });
+	                $('#loading-wrap').hide();
+	            } else {
+	                data = JSON.parse(data.slice(9));
+	                $('.name_notif_msg #name').text(data['name'].split(' ')[0]);
+	                $('.name_notif_msg #msg_count').text(data['inbox']['unread_count']);
+	                $('.name_notif_msg #notif_count').text(data['notifs']['unseen_count']);
+	                $('.name_notif_msg #msg_count').text(data['inbox']['unread_count']);
 
-                var notifs = data['notifs']['unseen']
+	                var notifs = data['notifs']['unseen']
 
-                if (notifs.length !== 0) {
+	                if (notifs.length !== 0) {
 
-                    $('.notif-well').show();
+	                    $('.notif-well').show();
 
-                    $('.notification').html('');
+	                    $('.notification').html('');
 
-                    for (var i = 0; i < notifs.length; i++) {
-                        $('.notification').append('<p>' + (i + 1) + '. ' + notifs[i] + '</p>');
-                    }
-                } else {
-                    $('.notif-well').hide();
-                }
+	                    for (var i = 0; i < notifs.length; i++) {
+	                        $('.notification').append('<p>' + (i + 1) + '. ' + notifs[i] + '</p>');
+	                    }
+	                } else {
+	                    $('.notif-well').hide();
+	                }
 
-                $('#loading-wrap').hide();
-            }
+	                $('#loading-wrap').hide();
+	            }
 
-            $('.notification a').click(function () {
-                if (typeof this.href !== undefined && this.href !== '') {
-                    _open_link(this.href);
-                }
-            });
-        }
-    });
-
+	            $('.notification a').click(function () {
+	                if (typeof this.href !== undefined && this.href !== '') {
+	                    _open_link(this.href);
+	                }
+	            });
+	        }
+	    });
+	    return ;
+	})();
 
     //Finds out hmac and formkey from source of html page.
     function get_hmac_fk() {
@@ -303,14 +312,10 @@ $(window).load(function () {
 
                 });
 
-
             }
-
 
         }
 
-
     });
-
 
 });
