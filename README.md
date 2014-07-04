@@ -5,7 +5,7 @@ Quora-Chrome-Extension Quora Chrome Extension - Instant Search, Message and Noti
 
 Screen 1:
 
-![Interface](http://dynofy.com/static/screen1_quora.png "Quora Interface")
+![Interface](http://dynofy.com/static/screen_quora.png "Quora Interface")
 
 
 Screen 2:
