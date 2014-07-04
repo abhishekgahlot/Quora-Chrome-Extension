@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<title>Quora</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="body">
+<div id="loading-wrap"><div class="loader"></div><p id="loader-text"></p></div>
+
+	<header class="header">
+		<div class="logo"></div>
+		<div class="menu">
+			<div class="search-wrapper">
+				<input class="search" type="text" placeholder="Search" id="search">
+				<a id="start_mic_link"><img id="start_mic" src="../icons/mic.png"/></a>
+			</div>
+			<ul class="ul_menu">
+					<a href="" id="add-question" class="btn btn-primary">Add Question</a>
+			</ul>
+		</div>
+	</header>
+
+		<!--login Modal -->
+		<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title" id="myModalLabel">Not Logged In</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>You must login to access this extension. Press button below to login to quora.</p>
+		      </div>
+		      <div class="modal-footer">
+		        <a type="button" href="http://www.quora.com" id="login" class="btn btn-primary">Login Now</a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
+	<div id="search_suggestions" class="search_suggestions"></div>
+
+
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs nav-justified" role="tablist">
+	  <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+	  <li><a href="#follow" role="tab" data-toggle="tab">Topics</a></li>
+	  <li><a href="#post" role="tab" data-toggle="tab">Post</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+	  <div class="tab-pane active" id="home">
+		  <div id="main">
+			<div class="well intro">
+				<p class="name_notif_msg">Hi <span id="name">Gourav</span>, You have
+				<span id="notif_count">1</span> notification and <span id="msg_count">1</span> unread messages.</p>
+			</div>
+			<div class="well notif-well">
+				<p class="lead">Notifications</p><hr>
+				<div class="notification"></div>
+			</div>
+		</div>
+
+	  </div>
+	  <div class="tab-pane" id="follow">
+		  <div class="well">
+			  <p class="lead">Follow Topics</p><hr>
+			  <input class="form-control" type="text" id="follow_search_input" placeholder="Find People and Topics">
+			  <br>
+			  <div class="follow_results">
+
+			  </div>
+		  </div>
+
+
+
+	  </div>
+	  <div class="tab-pane" id="post">Coming Soon</div>
+	</div>
+
+
+</body>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/popup.js"></script>
+</body>
+</html>

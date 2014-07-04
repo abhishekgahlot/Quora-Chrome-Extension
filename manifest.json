@@ -1,0 +1,34 @@
+{
+  "name": "Quora -  Best source of knowledge",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Quora extension created by abhishek(me@abhishek.it) for Quora.com.",
+  "homepage_url": "http://quora.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_icon":  "icons/icon48.png",
+    "default_title": "Quora",
+    "default_popup": "src/popup.html"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "permissions": [
+    "bookmarks",
+    "clipboardRead",
+    "clipboardWrite",
+    "cookies",
+    "notifications",
+    "tabs",
+    "geolocation",
+    "https://*.quora.com/*",
+    "http://*.quora.com/*"
+  ],
+ "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
