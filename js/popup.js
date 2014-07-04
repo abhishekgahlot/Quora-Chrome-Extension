@@ -25,7 +25,11 @@ $(window).load(function () {
 
     $('body').click(function () {
         $('#search_suggestions').hide();
-    })
+    });
+
+    $('#add-question').click(function () {
+    	_open_link($(this).attr('href'));
+    });
 
     //Global auth check
     $(document).ajaxError(function (event, xhr, settings, exception) {
