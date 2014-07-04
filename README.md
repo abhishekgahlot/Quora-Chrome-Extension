@@ -15,3 +15,7 @@ Screen 2:
 Screen 3:
 
 ![Follow](http://dynofy.com/static/screen3_quora.png "Follow Topics/People")
+
+Screen 4:
+
+![Internet check](http://dynofy.com/static/screen4_quora.png "Check Internet and refresh if connected.")
