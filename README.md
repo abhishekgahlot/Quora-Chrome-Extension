@@ -10,17 +10,17 @@ Some screenshots :
 
 Screen 1:
 
-![Interface](https://dynofy.com/static/screen_quora.png "Quora Interface")
+![Interface](https://github.com/abhishekgahlot/Quora-Chrome-Extension/blob/master/screenshots/screen_quora.png "Quora Interface")
 
 
 Screen 2:
 
-![Search](https://dynofy.com/static/screen2_quora.png "Search Bar")
+![Search](https://github.com/abhishekgahlot/Quora-Chrome-Extension/blob/master/screenshots/screen2_quora.png "Search Bar")
 
 Screen 3:
 
-![Follow](https://dynofy.com/static/screen3_quora.png "Follow Topics/People")
+![Follow](https://github.com/abhishekgahlot/Quora-Chrome-Extension/blob/master/screenshots/screen3_quora.png "Follow Topics/People")
 
 Screen 4:
 
-![Internet check](https://dynofy.com/static/screen4_quora.png "Check Internet and refresh if connected.")
+![Internet check](https://github.com/abhishekgahlot/Quora-Chrome-Extension/blob/master/screenshots/screen4_quora.png "Check Internet and refresh if connected.")
